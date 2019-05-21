@@ -8,7 +8,7 @@ storiesOf('Select', module)
   .addDecorator(withKnobs)
   .add('Single Select', () => ({
     template: `
-    <div style="background: lightgray">
+    <div>
       <mat-form-field>
         <mat-select (change)="onChange($event)" [placeholder]="placeholder" [disabled]="false">
           <mat-option *ngFor="let food of foods" [value]="food">
@@ -35,7 +35,7 @@ storiesOf('Select', module)
   }))
   .add('Multi Select', () => ({
     template: `
-    <div style="background: lightgray">
+    <div>
       <mat-form-field>
         <mat-select (change)="onChange($event)" [placeholder]="placeholder" multiple [disabled]="disabled">
           <mat-option *ngFor="let food of foods" [value]="food">
@@ -62,7 +62,7 @@ storiesOf('Select', module)
   }))
   .add('Groups', () => ({
     template: `
-    <div style="background: lightgray">
+    <div>
       <mat-form-field>
         <mat-select (change)="onChange($event)" [placeholder]="placeholder" [disabled]="disabled">
           <mat-option>-- None --</mat-option>
