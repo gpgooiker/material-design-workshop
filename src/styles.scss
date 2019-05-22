@@ -57,7 +57,7 @@ $stoom-en-damp-theme: mat-light-theme($primary, $accent);
 
 @include angular-material-theme($stoom-en-damp-theme);
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Kannada MN', 'Noto sans', 'Helvetica Neue', sans-serif; }
 
 .mat-typography {
   h4, h1 {
