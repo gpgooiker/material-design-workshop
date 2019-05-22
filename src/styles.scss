@@ -1,15 +1,66 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$primary: mat-palette($mat-amber);
+$dark-primary-text: #342B16;
+$font-family: 'Kannada MN', 'Noto sans', 'Helvetica Neue', sans-serif;
+$heading-font-family: Garamond, Georgia, serif;
+$display-font-family: 'Bodoni 72 Smallcaps', 'Times New Roman', serif;
+
+$stoom-en-damp-typography: mat-typography-config(
+  $font-family: $font-family,
+  $headline: mat-typography-level(80px, 100px, 500, $display-font-family),
+  $title: mat-typography-level(30px, 40px, 500, $heading-font-family),
+  $subheading-1: mat-typography-level(24px, 28px, 500, $heading-font-family),
+  $subheading-2: mat-typography-level(30px, 40px, 500, $heading-font-family),
+  $body-1: mat-typography-level(16px, 24px, 500),
+  $button: mat-typography-level(14px, 14px, 700, $heading-font-family)
+);
+
+@include angular-material-typography($stoom-en-damp-typography);
+
+$stoom-en-damp-brown: (
+  50: rgb(214,212,190),
+  100: rgb(196,192,164),
+  200: rgb(196,164,126),
+  300: rgb(196,164,126),
+  400: rgb(184,153,33),
+  500: rgb(191,176,145),
+  600: rgb(130,87,75),
+  700: rgb(130,87,75),
+  800: rgb(90,73,57),
+  900: rgb(75,71,62),
+  A100: #ffe57f,
+  A200: #ffd740,
+  A400: #ffc400,
+  A700: #ffab00,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: white,
+  )
+);
+
+$primary: mat-palette($stoom-en-damp-brown);
 $accent: mat-palette($mat-teal);
 $stoom-en-damp-theme: mat-light-theme($primary, $accent);
 
 @include angular-material-theme($stoom-en-damp-theme);
 
-html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-@mixin stoom-en-damp-theme($theme) {
-  $primary: map-get
+.mat-typography {
+  h4, h1 {
+    color: lighten($dark-primary-text, 20%);
+  }
 }
